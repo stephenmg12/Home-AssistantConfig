@@ -20,4 +20,4 @@ pyozw.sqlite
 nest.conf
 .uuid
 ipchange.yaml
-
+.HA_VERSION
