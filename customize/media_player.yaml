@@ -1,0 +1,22 @@
+#Plex Devices
+media_player.my_afts_2:
+  friendly_name: 'Stephen Plex'
+  
+media_player.my_afts:
+  friendly_name: 'Family Room Plex'
+  
+#Chromecast
+media_player.stephens_chromecast:
+  friendly_name: 'Stephen Chromecast'
+  
+media_player.family_room_home:
+  friendly_name: 'Family Room Google Home'
+  
+#Hide Devices
+media_player.htc_one_m9:
+  friendly_name: 'Stephen HTC'
+  hidden: True
+  
+media_player.htc_one_m9__0pja2:
+  friendly_name: 'David HTC'
+  hidden: True
