@@ -1,4 +1,4 @@
 - platform: ping
   hosts:
-    stephen_HTC: 192.168.1.68
-    david_HTC: 192.168.72
+    stephen: 192.168.1.68
+    david: 192.168.72
