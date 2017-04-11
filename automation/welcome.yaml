@@ -9,4 +9,4 @@
     - service: tts.google_say
       entity_id: media_player.family_room_home
       data_template:
-        message: "Welcome home, {{ trigger.entity_id.split('.')[1].split('_')[1] }}!"
+        message: "Welcome home, {{ trigger.entity_id.split('.')[1] }}!"
