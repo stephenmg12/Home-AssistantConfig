@@ -1,0 +1,12 @@
+- alias: Welcome Family
+  trigger:
+    - platform: state
+      entity_id:
+        - device_tracker.stephen_htc
+      from: 'not_home'
+      to: 'home'
+  action:
+    - service: tts.google_say
+      entity_id: friendly_name: Family Room Chromecast media_player.family_room_home
+      data_template:
+        message: "Welcome home, {{ trigger.entity_id.split('.')[1].split('_')[1] }}!"
