@@ -62,7 +62,7 @@ input_select:
     name: Radio Location
     options:
       - Family Room Soundbar
-	  - Family Room Home
+      - Family Room Home
       - All Zones
     initial: "Family Room Home"
     icon: mdi:radio
