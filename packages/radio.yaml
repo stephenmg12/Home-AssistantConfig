@@ -39,7 +39,7 @@ script:
             {% endif %}
           media_content_type: >
             {% if is_state('input_select.radio_station', 'KMBZ') %}  'audio/flv'
-            {%else %} 'audio/mp3'
+            {% else %} 'audio/mp3'
             {% endif %}
   ###### VOLUME SLIDER CONTROL (LOCATION BASED)
 #  radio_volume:
