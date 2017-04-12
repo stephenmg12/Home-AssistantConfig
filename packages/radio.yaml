@@ -24,6 +24,7 @@ script:
             {% if is_state('input_select.radio_station_location', 'Family Room Home') %} media_player.family_room_home
             {% elif is_state('input_select.radio_station_location', 'Family Room Soundbar') %} media_player.living_room_audio
             {% elif is_state('input_select.radio_station_location', 'All Zones') %} media_player.living_room_audio
+            {% endif %}
           media_content_id: >
             {% if is_state('input_select.radio_station', 'Hot 108') %} http://jbmedia-edge1.cdnstream.com:80/hot108
             {% elif is_state('input_select.radio_station', 'The Beat') %} http://live.leanstream.co/CKBTFM-MP3
