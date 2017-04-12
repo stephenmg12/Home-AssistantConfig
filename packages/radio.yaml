@@ -35,9 +35,12 @@ script:
             {% elif is_state('input_select.radio_station', 'Play Radio') %} http://176.9.31.78:8222
             {% elif is_state('input_select.radio_station', '90s Hits') %} http://rfcmedia.streamguys1.com/90hits.mp3
             {% elif is_state('input_select.radio_station', 'Elium-Rock') %} http://listen.radionomy.com/Elium-Rock
-            {% elif is_state('input_select.radio_station', 'KMBZ') %} http://54.227.37.79/entercom-kmbzfmaac-64?type=.flv&source=v6playe
+            {% elif is_state('input_select.radio_station', 'KMBZ') %} http://54.227.37.79/entercom-kmbzfmaac-64?session-id=822e007156445e2fba718c254073adde&type=.flv&source=v6playe
             {% endif %}
-          media_content_type: 'audio/mp3'
+          media_content_type: >
+            {% if is_state('input_select.radio_station', 'KMBZ') %}  'audio/flv'
+            {%else %} 'audio/mp3'
+            {% endif %}
   ###### VOLUME SLIDER CONTROL (LOCATION BASED)
 #  radio_volume:
 
