@@ -7,7 +7,7 @@ input_boolean:
     initial: off
     icon: mdi:food
 
-	
+
 scene:
   - name: Family Room Movie
     entities:
