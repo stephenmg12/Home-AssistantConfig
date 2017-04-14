@@ -1,0 +1,61 @@
+################################################################
+## Packages / Movie
+################################################################
+input_boolean:
+  enable_eating:
+    name: Currently Eating
+    initial: off
+    icon: mdi:food
+
+	
+scene:
+  - name: Family Room Movie
+    entities:
+        light.left_lamp:
+            state: on
+            brightness: 25
+        light.right_lamp:
+            state: off
+        light.main_room_light:
+            state: off
+  - name: Family Room Normall
+    entities:
+        light.left_lamp:
+            state: on
+            brightness: 255
+        light.right_lamp:
+            state: on
+            brightness: 255
+        light.main_room_light:
+            state: on
+            brightness: 255
+################################################
+## Automation
+################################################
+
+automation:
+  - alias: dim lights family room
+    # initial_state: 'on'
+    trigger:
+      - platform: state
+        entity_id:
+        - media_player.my_afts
+        to: 'playing'
+    action:
+        service: scene.turn_on
+        entity_id: scene.family_room_movie
+  - alias: turn lights on family room
+    # initial_state: 'on'
+    trigger:
+      - platform: state
+        entity_id:
+        - media_player.my_afts
+        from: 'playing'
+        to: 'idle'
+    condition:
+      - condition: state
+        entity_id: sun.sun
+        state: 'below_horizon'
+    action:
+        service: scene.turn_on
+        entity_id: scene.family_room_normal
