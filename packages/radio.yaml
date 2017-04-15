@@ -19,8 +19,7 @@ script:
         data_template:
           entity_id: media_player.family_room_home
           media_content_id: http://54.198.252.60/entercom-kmbzfmmp3-64
-          app_name: TuneIn Free
-          app_id: 12F05308
+          media_content_type: 'audio/flv'
   ###### VOLUME SLIDER CONTROL (LOCATION BASED)
 #  radio_volume:
 
