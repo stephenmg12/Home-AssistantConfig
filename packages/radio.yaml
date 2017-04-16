@@ -6,6 +6,8 @@ homeassistant:
     script.radio:
       friendly_name: Start Radio
       icon: mdi:radio
+      emulated_hue: true
+      emulated_hue_name: "radio"
 
 script:
   radio:
