@@ -30,6 +30,8 @@ wink:
   client_id: !secret wink_client_id
   client_secret: !secret wink_client_secret
 
+ecobee:
+  api_key: !secret ecobee_key
 #ifttt:
  # key: !secret ifttt_key
 
