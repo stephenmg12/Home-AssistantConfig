@@ -9,23 +9,3 @@ sensor:
     scan_interval: 900
 shell_command:
   turn_tv_off: ssh hdmicec 'echo standby 0 | cec-client -s -d 1'
-###############################################
-## Automation
-###############################################
-automation:
-  - alias: 'Turn Off TV'
-    trigger:
-      - platform: state
-        entity_id:
-          - binary_sensor.ecolink_motion_sensor_sensor_2_0
-        state: 'off'
-    condition:
-      conditions:
-        - condition: state
-          entity_id: 'media_player.family_room_chromecast'
-          state: 'off'
-        - condition: state
-          entity_id: 'media_player.my_afts'
-          state: 'idle'
-    action:
-      service: shell_command.turn_tv_off
