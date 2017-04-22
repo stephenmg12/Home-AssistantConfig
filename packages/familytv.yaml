@@ -21,11 +21,11 @@ automation:
         state: 'off'
     condition:
       conditions:
-        -condition: state
-         entity_id: media_player.family_room_chromecast
-         state: 'off'
-        -condition: state
-         entity_id: media_player.my_afts
-         state: 'idle'
+        - condition: state
+          entity_id: 'media_player.family_room_chromecast'
+          state: 'off'
+        - condition: state
+          entity_id: 'media_player.my_afts'
+          state: 'idle'
     action:
       service: shell_command.turn_tv_off
