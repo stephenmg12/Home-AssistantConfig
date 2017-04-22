@@ -66,6 +66,8 @@ history:
 
 zwave:
   usb_path: /dev/zwave
+zigbee:
+  device: /dev/zigbee
 
 media_player:
   - platform: cast
