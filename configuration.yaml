@@ -84,7 +84,7 @@ emulated_hue:
   expose_by_default: false
 
 #sensor: !include_dir_merge_list sensor
-automation: !include_dir_merge_list automation
+#automation: !include_dir_merge_list automation
 #scene: !include_dir_merge_list scene
 #switch: !include_dir_merge_list switch
 #script: !include_dir_merge_named script
