@@ -6,5 +6,5 @@ sensor:
     name: family_room_tv
     command: >-
       ssh hdmicec 'echo pow 0 | cec-client -s -d 1'
-    value_template: {%- if is_state("sensor.family_room_tv", "opening a connection to the CEC adapter...\npower status: standby")%}Off{%- else -%}On{%- endif %}
+    value_template: {%- if is_state("sensor.family_room_tv", "opening a connection to the CEC adapter...\npower status: standby") -%}Off{%- else -%}On{%- endif %}
     scan_interval: 900
