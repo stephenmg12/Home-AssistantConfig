@@ -1,8 +1,8 @@
 #Plex Devices
-media_player.my_afts_2:
+media_player.plex_my_afts_2:
   friendly_name: 'Stephen Plex'
   
-media_player.my_afts:
+media_player.plex_my_afts:
   friendly_name: 'Family Room Plex'
   
 #Chromecast

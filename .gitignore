@@ -21,3 +21,9 @@ nest.conf
 .uuid
 ipchange.yaml
 .HA_VERSION
+custom_components/
+emulated_hue_ids.json
+firetv.yaml
+plex.conf.old
+zwave_device_config.yaml
+

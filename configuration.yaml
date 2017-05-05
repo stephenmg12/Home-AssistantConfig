@@ -34,6 +34,13 @@ ecobee:
   api_key: !secret ecobee_key
 #ifttt:
  # key: !secret ifttt_key
+ 
+camera:
+  platform: foscam
+  ip: !secret foscam_ip
+  name: side_yard
+  username: !secret foscam_username
+  password: !secret foscam_password
 
 logbook:
   exclude:
@@ -66,13 +73,16 @@ history:
 
 zwave:
   usb_path: /dev/zwave
-zigbee:
-  device: /dev/zigbee
+  device_config: !include zwave_device_config.yaml
+
+zha:
+  usb_path: /dev/zigbee
+  database_path: /home/homeassistant/.config/bellows/app.db
 
 media_player:
   - platform: cast
   - platform: plex
-#    entity_namespace: 'plex'
+    entity_namespace: 'plex'
 
 tts:
   platform: google

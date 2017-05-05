@@ -4,16 +4,17 @@
 
 switch:
   - platform: command_line
-    name: family_room_tv
     scan_interval: 900
-    command_on: >-
-      ssh hdmicec 'echo on 0 | cec-client -s -d 1'
-    command_off: >-
-      ssh hdmicec 'echo standby 0 | cec-client -s -d 1'
-    command_state: >-
-      ssh hdmicec 'echo pow 0 | cec-client -s -d 1' | grep -Po 'power status: \K(.+)'
-    value_template: >-
-      {{ value == 'on' }}
+    switches:
+      family_room_tv:
+        command_on: >-
+          ssh hdmicec 'echo on 0 | cec-client -s -d 1'
+        command_off: >-
+          ssh hdmicec 'echo standby 0 | cec-client -s -d 1'
+        command_state: >-
+          ssh hdmicec 'echo pow 0 | cec-client -s -d 1' | grep -Po 'power status: \K(.+)'
+        value_template: >-
+          {{ value == 'on' }}
       
 ###############################################
 ## Automation
@@ -23,14 +24,14 @@ automation:
     trigger:
       - platform: state
         entity_id:
-          - binary_sensor.ecolink_motion_sensor_sensor_2_0
+          - binary_sensor.familyroom_sensor_2_0
         state: 'off'
     condition:
       - condition: state
         entity_id: 'media_player.family_room_chromecast'
         state: 'off'
       - condition: state
-        entity_id: 'media_player.my_afts'
+        entity_id: 'media_player.plex_my_afts'
         state: 'idle'
     action:
       - service: switch.turn_off
